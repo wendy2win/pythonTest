@@ -1,0 +1,11 @@
+# 第 0000 题：将你的 QQ 头像（或者微博头像）右上角加上红色的数字，类似于微信未读信息数量那种提示效果。 类似于图中效果
+
+from PIL import Image,ImageDraw,ImageFont
+
+img = Image.open('fbb.jpg')
+x,y = img.size
+print x,y
+fonts = ImageFont.truetype(font=None, size=60, index=0, encoding="", filename='Futura.ttf')
+draw_img= ImageDraw.Draw(img)
+draw_img.text((15*x/20,y/20),"999+",'red',font=fonts)
+img.save('afterdraw.jpg')
